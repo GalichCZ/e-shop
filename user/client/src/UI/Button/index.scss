@@ -1,0 +1,51 @@
+@use '@/styles/_colors.module' as colors;
+
+.button {
+  padding: 1rem;
+  border-radius: .5rem;
+  color: colors.$white;
+  cursor: pointer;
+}
+
+.primary {
+  background-color: colors.$primary;
+}
+
+.regular-dark {
+  background-color: colors.$secondary-dark;
+}
+
+.regular-light {
+  background-color: colors.$secondary-light;
+}
+
+.outlined {
+  background-color: colors.$white;
+  border: .1rem solid colors.$primary;
+  color: colors.$primary;
+}
+
+.cancel {
+  background-color: colors.$cancel;
+}
+
+.cancel-outlined {
+  background-color: colors.$white;
+  border: .1rem solid colors.$cancel;
+  color: colors.$cancel;
+}
+
+.small {
+  padding: .5rem;
+  font-size: 1rem;
+  height: 3.5rem;
+}
+
+.medium {
+  font-size: 1.35rem;
+  height: 4rem;
+}
+
+.large {
+  font-size: 2rem;
+}

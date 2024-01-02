@@ -1,9 +1,5 @@
-import ProductCard from "@/UI/ProductCard";
+'use client'
 
-export default function Home() {
-  return (
-      <section>
-          <ProductCard/>
-      </section>
-  )
+export default function Page() {
+  return <section></section>
 }

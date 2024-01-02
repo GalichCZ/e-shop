@@ -1,5 +1,21 @@
 $link-color: #0080ff;
+$primary: #4CAF50;
+$secondary-light: #8BC34A;
+$secondary-dark: #388E3C;
+$accent-light: #CDDC39;
+$accent-dark: #FFC107;
+$box-shadow: #2A2929;
+$white: #FFF;
+$cancel: #C62828;
 
 :export {
-  linkColor: $link-color
+  linkColor: $link-color;
+  primary: $primary;
+  secondaryLight: $secondary-light;
+  secondaryDark: $secondary-dark;
+  accentLight: $accent-light;
+  accentDark: $accent-dark;
+  boxShadow: $box-shadow;
+  white: $white;
+  cancel: $cancel;
 }
