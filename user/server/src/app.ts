@@ -1,7 +1,6 @@
 import express, { json } from 'express'
 import dotenv from 'dotenv'
 import sequelize  from './db/db'
-import User from './db/models/User.model'
 import client from './redis/config'
 import cors from "cors"
 import multer from 'multer'
@@ -9,6 +8,7 @@ import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import { S3Client, PutObjectCommand, GetObjectCommand, DeleteObjectCommand } from '@aws-sdk/client-s3'
 import crypto from 'crypto'
 import sharp from 'sharp'
+import * as models from './db/models'
 
 dotenv.config()
 
@@ -99,8 +99,13 @@ app.post('/tests3', upload.single('image'), async (req, res)=> {
 
 app.get('/testpost', async (req, res) => {
   try {
-     await User.create({
+    await models.User.create({
       name: "name", email: "email"
+    })
+    await models.Product.create({
+      title: "title",
+      description: "description",
+      rating: 3.3,
     })
     res.send("success")
   } catch (e) {
@@ -110,9 +115,10 @@ app.get('/testpost', async (req, res) => {
 
 app.get('/testget', async (req, res) => {
   try {
-    const users = await User.findAll()
-    await client.set('all_users', JSON.stringify(users))
-    return res.status(200).json({ users });
+    const users = await models.User.findAll()
+    const products = await models.Product.findAll()
+    await client.set('all_users', JSON.stringify({ users }))
+    return res.status(200).json({ users, products });
   } catch (e) {
     res.json(e)
   }

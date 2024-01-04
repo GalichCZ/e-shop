@@ -1,0 +1,30 @@
+SQL                     Mongo
+
+Product:                ProductReview:
+  ID                      productId
+  Title                   content
+  Description             imageUrls
+  Rating                  rating
+
+Image:
+  ID
+  imgUrl
+  imgAlt
+
+Tag:
+  ID
+  Tag
+
+ProductTag:
+  ID
+  ProductId
+  TagId
+
+Category:
+  ID
+  Name
+
+ProductCategory:
+  ID
+  ProductId
+  CategoryId

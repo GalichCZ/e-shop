@@ -2,15 +2,15 @@ import {DataTypes, Model, Optional} from 'sequelize'
 import sequelize from '../db'
 
 interface UserModel {
-  id: number,
-  name: string,
+  id: number
+  name: string
   email: string
-  createdAt?: Date;
-  updatedAt?: Date;
-  deletedAt?: Date;
+  createdAt?: Date
+  updatedAt?: Date
+  deletedAt?: Date
 }
 
-export interface UserInput extends Optional<UserModel, 'id' | 'name' | 'email'> {}
+export interface UserInput extends Optional<UserModel, 'id'> {}
 export interface UserOutput extends Required<UserModel> {}
 
 class User extends Model<UserModel, UserInput> implements UserModel {
